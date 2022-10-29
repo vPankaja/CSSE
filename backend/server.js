@@ -5,8 +5,8 @@ import connectDB from './config/db.js'
 import cors from 'cors'
 
 // Routes
-
-
+import UserRoutes from './routes/userRoutes.js'
+import trMngerRoutes from './routes/trManagerRoutes.js'
 
 dotenv.config()
 
@@ -19,7 +19,8 @@ app.use(cors())
 app.use(express.json())
 
 // Calling Routes
-
+app.use("/api/user", UserRoutes)
+app.use('/api/trMnger', trMngerRoutes)
 
 
 
