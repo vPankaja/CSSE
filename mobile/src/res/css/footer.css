@@ -1,0 +1,16 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    padding: 10px;
+    background-color: #003971;
+    height: 50px;
+}
+
+.footercol {
+    text-align: center;
+}
+
+.footerIcon {
+    width: 50%;
+    text-align: center;
+}
