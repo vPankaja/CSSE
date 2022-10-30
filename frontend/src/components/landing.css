@@ -50,25 +50,33 @@ body {
     cursor: pointer;
 }
 
-.landing-page .header-area .links li:last-child {
+.landing-page .header-area .links li a {
+    display: inline-block;
+    margin-left: 30px;
+    color: #5d5d5d;
+    text-decoration: none;
+}
+
+.landing-page .header-area .button {
     border: 0;
     border-radius: 20px;
     padding: 10px 18px;
     color: #FFF;
-    background-color: #6c63ff;
+    background-color: #1F45FC;
+    href:'https://github.com/vPankaja/CSSE/pull/6';
 }
 
 .landing-page .info {
-    width: 35%;
+    width: 50%;
     float: left;
-    margin-top: 130px;
+    margin-top: 200px;
 }
 
 .landing-page .info h1 {
-    font-size: 44px;
+    font-size: 37px;
     margin: 0 0 20px;
     line-height: 1.4;
-    color: #5d5d5d;
+    color: navy;
 }
 
 .landing-page .info p {
@@ -85,13 +93,13 @@ body {
     margin-top: 30px;
     cursor: pointer;
     color: #FFF;
-    background-color: #6c63ff;
+    background-color:#1F45FC;
 }
 
 .landing-page .image {
     width: 50%;
     float: right;
-    margin-top: 35px;
+    margin-top: 0px;
 }
 
 .landing-page .image img {
