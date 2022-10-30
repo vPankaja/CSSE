@@ -18,6 +18,7 @@ import TravelHistory from "./components/customer/TravelHistory";
 import Payment from "./components/customer/Payment";
 import CheckAccBalance from "./components/customer/CheckAccBalance";
 import CheckTimetables from "./components/customer/CheckTimetable";
+import Register from "./components/Register";
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Routes>
           <Route path="/dashboard" element={<LandingScreen />} />
           <Route path="/plantimetable" element={<PlanTimeTable />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/managerhome" element={<ManagerHome />} />
           <Route path="/customerhome" element={<CustomerHome />} />
