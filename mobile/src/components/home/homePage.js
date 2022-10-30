@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import swal from "sweetalert";
 import "../../res/css/home-page.css";
 import carImg from "../../res/images/car_home.png";
 import box1 from "../../res/images/home/Spjald.png";
@@ -50,7 +51,7 @@ export default function HomePage() {
             <img src={box2} style={{ width: "100%" }} alt="" />
             <div className="p-1 boxTitle">Reload Account</div>
             <div style={{ "text-align": "center" }} className="py-2">
-              <div className="btn boxBtn">Click</div>
+              <div className="btn boxBtn" onClick={() => {window.location.href="/reload"}}>Click</div>
             </div>
           </div>
 
@@ -59,7 +60,7 @@ export default function HomePage() {
             <img src={box3} style={{ width: "100%" }} alt="" />
             <div className="p-1 boxTitle">Check Timetable</div>
             <div style={{ "text-align": "center" }} className="py-2">
-              <div className="btn boxBtn">Click</div>
+              <div className="btn boxBtn" onClick={e => {window.location.href="/gettimetableList"}}>Click</div>
             </div>
           </div>
 
