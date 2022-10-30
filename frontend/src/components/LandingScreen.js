@@ -13,22 +13,24 @@ const LandingScreen = () => {
         <div class="landing-page">
   <div class="container">
     <div class="header-area">
-      <div class="logo">Your <b>Website</b></div>
+      <div class="logo"><b>BookMyTickets</b></div>
       <ul class="links">
-        <li>Home</li>
-        <li>About Us</li>
-        <li>Work</li>
-        <li>Info</li>
-        <li>Get Started</li>
+        <li><a href='#'>Home</a></li>
+        <li><a href='#'>About</a></li>
+        <li><a href='#'>Services</a></li>
+        <li><Link to="#"><div class="button">Login </div></Link></li>
       </ul>
+      
     </div>
     <div class="info">
-      <h1>Looking For Inspiration</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus odit nihil ullam nesciunt quidem iste, Repellendus odit nihil</p>
-      <button>Button name</button>
+      <h1>Recharge your Account Faster</h1>
+      <p>"Travel changes you. As you move through this life and this world, you change things slightly, you leave marks behind, however small. And in return,life - and travel - leaves marks on you."</p>
+      <Link to="#">
+        <button href='https://github.com/vPankaja/CSSE/pull/6'>Make Payment</button>
+        </Link>
     </div>
     <div class="image">
-      <img src="https://i.postimg.cc/65QxYYzh/001234.png"/>
+      <img src="https://www.ivartravels.com/assets/images/services-bus.png"/>
     </div>
     <div class="clearfix"></div>
   </div>
