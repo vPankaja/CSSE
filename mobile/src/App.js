@@ -10,6 +10,7 @@ import GetTimetableList from "./components/getTimetables/getTimetableList";
 import Checkout from "./components/reload/checkout";
 import VehicleList from "./components/vehicleManagemnt/vehicleList";
 import AddVehicle from "./components/vehicleManagemnt/addVehicle";
+import StartJourney from "./components/journey/startJourney";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/checkout/:amount" element={<Checkout />} />
         <Route path="/vehicleList" element={<VehicleList />} />
         <Route path="/addVehicle" element={<AddVehicle />} />
+        <Route path="/startJourney" element={<StartJourney />} />
       </Routes>
     </Router>
   );

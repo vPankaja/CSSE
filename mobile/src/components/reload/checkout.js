@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Route, useParams } from "react-router-dom";
 import backImg from "../../res/images/reload/Arrowback.png";
 import masterCard from "../../res/images/reload/MasterCardLogo.png";
 import cardIcon from "../../res/images/reload/CardIcon.png";
@@ -21,7 +21,7 @@ export default function Checkout() {
   return (
     <>
       <div className="amountDrop mx-2 pt-5">
-        <img src={backImg} alt="" style={{ width: "10px" }} className="ms-4" />
+        <img src={backImg} alt="" style={{ width: "10px" }} className="ms-4" onClick={e => {}} />
         <div className="row m-0 py-3 checkoutAmt">
           <div className="col-6">Checkout</div>
           <div className="col-6">Rs {amount}</div>
