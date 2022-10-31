@@ -1,0 +1,48 @@
+.headingAdmin {
+  background-color: #003971;
+  min-height: 200px;
+  height: fit-content;
+  position: fixed;
+}
+
+.titleAdmin {
+  color: white;
+  font-weight: 500;
+  font-size: 35px;
+  font-family: "Abhaya Libre Medium";
+}
+
+.searchBarAdmin {
+  width: 100%;
+  border-radius: 10px;
+  padding: 7px;
+}
+
+.optionTextAdmin {
+  text-align: center;
+  color: #003971;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.carImgAdmin {
+  width: 150px;
+  transform: translateY(20%);
+}
+
+.homeboxAdmin {
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.boxTitleAdmin {
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 16px;
+  text-align: center;
+}
+
+.boxBtnAdmin {
+  background-color: #003971;
+  color: white;
+  padding: 10px;
+}
