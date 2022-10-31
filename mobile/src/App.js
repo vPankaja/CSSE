@@ -11,6 +11,7 @@ import Checkout from "./components/reload/checkout";
 import VehicleList from "./components/vehicleManagemnt/vehicleList";
 import AddVehicle from "./components/vehicleManagemnt/addVehicle";
 import StartJourney from "./components/journey/startJourney";
+import LoginPage from "./components/LoginPage";
 
 function App() {
   return (
@@ -25,6 +26,8 @@ function App() {
         <Route path="/vehicleList" element={<VehicleList />} />
         <Route path="/addVehicle" element={<AddVehicle />} />
         <Route path="/startJourney" element={<StartJourney />} />
+      <Route path="/home" element={<HomePage />} />
+      <Route path="/" element={<LoginPage />} />
       </Routes>
     </Router>
   );
