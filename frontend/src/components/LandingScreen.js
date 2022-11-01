@@ -2,7 +2,7 @@ import React from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
-import "../res/css/landing.css";
+import "../res/css/customer.css";
 
 AOS.init({
   duration: "2000",
@@ -35,7 +35,8 @@ const LandingScreen = () => {
               </Link>
             </li>
           </ul>
-        </div>
+        </div></div>
+        <div className="container2">
         <div class="info">
           <h1>Recharge your Account Faster</h1>
           <p>
@@ -49,11 +50,12 @@ const LandingScreen = () => {
             </button>
           </Link>
         </div>
-        <img style={{width: '620px', height: '400px', float:'right', marginTop:'100px'}}
+        <img style={{width: '620px', height: '400px', float:'right', marginTop:'-190px', marginRight:'50px'}}
           src={require("../res/images/Landing.png")}/>
         
         <div class="clearfix"></div>
       </div>
+    
     </div>
   );
 };

@@ -2,7 +2,7 @@ import React from 'react'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Link } from "react-router-dom";
-import "../../res/css/PlanTimeTable.css"
+import "../../res/css/customer.css"
 
 AOS.init({
       duration: '2000'
@@ -28,11 +28,13 @@ const PlanTimeTable = () => {
         <li><a href='#'>Services</a></li>
         <li><Link to="/dashboard"><div class="button">Logout</div></Link></li>
       </ul>
-      
+      </div>
     </div>
     <div style={{fontSize:"22px",marginBottom:"-50px",textAlign:"center",marginTop:"40px"}}>
       <strong style={{color:"darkblue"}}>Plan Timetable</strong><br></br>
         <span style={{fontSize:"10px"}}>Reload your account without any delay to continue your journey</span></div>
+
+        <div className="container2">
         <div class="register-photo">
         <div class="form-container">
             <div class="image-holder"></div>

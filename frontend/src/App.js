@@ -7,6 +7,7 @@ import PlanTimeTable from "./components/manager/PlanTimeTable";
 import Login from "./components/Login";
 import ManagerHome from "./components/manager/ManagerHome";
 import CustomerHome from "./components/customer/CustomerHome";
+import ReloadAccount from "./components/customer/ReloadAccount";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/managerhome" element={<ManagerHome />} />
           <Route path="/customerhome" element={<CustomerHome />} />
+          <Route path="/reloadaccount" element={<ReloadAccount />} />
         </Routes>
       </Router>
   );

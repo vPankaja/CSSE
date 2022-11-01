@@ -2,7 +2,7 @@ import React from 'react'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Link } from "react-router-dom";
-import "../res/css/PlanTimeTable.css"
+import "../res/css/customer.css"
 
 AOS.init({
       duration: '2000'
@@ -29,8 +29,8 @@ const Login = () => {
         <li><Link to="#"><div class="button">Register </div></Link></li>
       </ul>
       
-    </div>
-
+    </div></div>
+    <div className="container2">
         <div class="register-photo">
         <div class="form-container" style={{display:"flex",boxShadow:"10px 10px #B2BEB5"}}>
             <div className='loginImg' >
