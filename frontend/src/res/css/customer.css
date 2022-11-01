@@ -57,10 +57,19 @@
     background-color: #1F45FC;
 }
 
+.landing-page .container2{
+  background:url(../images/Bubble\ 1.png);
+  padding: 250px 0;
+  background-size:contain;
+background-repeat: no-repeat;
+}
+
+
 .landing-page .info {
     width: 50%;
     float: left;
-    margin-top: 200px;
+    margin-left: 80px;
+    margin-top: -60px;
 }
 
 .landing-page .info h1 {
@@ -87,11 +96,7 @@
     background-color:#1F45FC;
 }
 
-.landing-page .image {
-    width: 50%;
-    float: right;
-    margin-top: 0px;
-}
+
 
 .landing-page .image img {
     max-width: 100%;
@@ -101,10 +106,7 @@
   clear: both;
 }
 .register-photo {
-    background:url(../images/Bubble\ 1.png);
-    padding: 80px 0;
-    background-size:contain;
-  background-repeat: no-repeat;
+
   }
   
   .register-photo .image-holder {
@@ -120,8 +122,7 @@
     display: table;
     max-width: 900px;
     width: 90%;
-    margin: 0 auto;
-    box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+    margin: -120px auto;
   }
   
   .register-photo form {
@@ -245,8 +246,8 @@
    }
 
    .cards {
-    margin-top: 50px;
-    margin-left: 170px;
+    margin-top: -80px;
+    margin-left: 320px;
     max-width: 1000px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));

@@ -2,7 +2,7 @@ import React from 'react'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Link } from "react-router-dom";
-import "../../res/css/PlanTimeTable.css"
+import "../../res/css/customer.css"
 
 AOS.init({
       duration: '2000'
@@ -28,7 +28,7 @@ const ManagerHome = () => {
         <li><a href='#'>Services</a></li>
         <li><Link to="/dashboard"><div class="button">Logout </div></Link></li>
       </ul>
-      
+      </div>
     </div>
     <div style={{fontSize:"22px",marginBottom:"-50px",textAlign:"center",marginTop:"40px"}}>
       <strong style={{color:"darkblue"}}>Choose your option to go</strong><br></br>
@@ -36,6 +36,7 @@ const ManagerHome = () => {
         would it be to "somewhere" or "someone"</span></div>
         <div className="register-photo">
         
+        <div className="container2">
         <div class="cards">
         <div className="card" style={{borderRadius:"30px",height:"280px",width:"200px",alignItems:"center"}}>
             <div className='imgCont'>
@@ -132,6 +133,7 @@ const ManagerHome = () => {
 </div>
     </div>
     </div>
+    
       );
 }
 

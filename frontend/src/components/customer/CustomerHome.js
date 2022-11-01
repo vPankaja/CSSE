@@ -2,7 +2,7 @@ import React from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
-import "../../res/css/PlanTimeTable.css";
+import "../../res/css/customer.css";
 
 AOS.init({
   duration: "2000",
@@ -41,6 +41,7 @@ const CustomerHome = () => {
             </li>
           </ul>
         </div>
+        </div>
         <div
           style={{
             fontSize: "22px",
@@ -58,7 +59,7 @@ const CustomerHome = () => {
             now, would it be to “somewhere” or to “someone”?
           </span>
         </div>
-        <div className="register-photo">
+        <div className="container2">
           <div class="cards">
             <div
               className="card"
@@ -172,7 +173,6 @@ const CustomerHome = () => {
           </div>
         </div>
       </div>
-    </div>
   );
 };
 
