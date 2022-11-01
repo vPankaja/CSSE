@@ -7,10 +7,10 @@ body {
 }
 
 .container {
-    /* width: auto;
+    width: auto;
     padding-right: 15px;
     padding-left: 15px;
-    margin: auto; */
+    margin: auto;
 }
 
 /* Start Landing Page */
@@ -24,15 +24,6 @@ body {
     display: flex;
     padding: 25px 0 0;
     position: relative;
-}
-
-.landing-page .header-area .logo {
-    text-transform: uppercase;
-    font-style: italic;
-    margin-top: 10px;
-    font-size: 19px;
-    width: 300px;
-    color: #5d5d5d;
 }
 
 .landing-page .header-area .links {
@@ -63,7 +54,6 @@ body {
     padding: 10px 18px;
     color: #FFF;
     background-color: #1F45FC;
-    href:'https://github.com/vPankaja/CSSE/pull/6';
 }
 
 .landing-page .info {
@@ -74,7 +64,7 @@ body {
 
 .landing-page .info h1 {
     font-size: 37px;
-    margin: 0 0 20px;
+    margin: 0 0 30px;
     line-height: 1.4;
     color: navy;
 }
@@ -99,7 +89,7 @@ body {
 .landing-page .image {
     width: 50%;
     float: right;
-    margin-top: 0px;
+    margin-top: 20px;
 }
 
 .landing-page .image img {
@@ -109,6 +99,13 @@ body {
 .clearfix {
   clear: both;
 }
+
+.register-photo {
+    background:url(../images/Bubble\ 1.png);
+    padding: 80px 0;
+    background-size:contain;
+  background-repeat: no-repeat;
+  }
 
 /* End Landing Page */
    

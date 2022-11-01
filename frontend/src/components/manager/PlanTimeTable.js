@@ -13,12 +13,20 @@ const PlanTimeTable = () => {
         <div class="landing-page">
         <div class="container">
         <div class="header-area">
-      <div class="logo"><b>BookMyTickets</b></div>
+        <img src={require("../../res/images/logocar.png")} />{" "}
+          <div
+            style={{
+              marginTop: "20px",
+              width: "300px",
+              color: "#3399FF",
+              fontSize: "19px",
+            }}
+          ><b>BookMyTickets</b></div>
       <ul class="links">
         <li><a href='#'>Home</a></li>
         <li><a href='#'>About</a></li>
         <li><a href='#'>Services</a></li>
-        <li><Link to="#"><div class="button">Logout</div></Link></li>
+        <li><Link to="/dashboard"><div class="button">Logout</div></Link></li>
       </ul>
       
     </div>

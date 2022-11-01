@@ -4,8 +4,9 @@ import { BrowserRouter as Router, Routes } from "react-router-dom";
 import { Route, Switch } from "react-router";
 import LandingScreen from "./components/LandingScreen";
 import PlanTimeTable from "./components/manager/PlanTimeTable";
-import ManagerLogin from "./components/manager/ManagerLogin";
+import Login from "./components/Login";
 import ManagerHome from "./components/manager/ManagerHome";
+import CustomerHome from "./components/customer/CustomerHome";
 
 function App() {
   return (
@@ -13,8 +14,9 @@ function App() {
         <Routes>
           <Route path="/dashboard" element={<LandingScreen />} />
           <Route path="/plantimetable" element={<PlanTimeTable />} />
-          <Route path="/managerlogin" element={<ManagerLogin />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/managerhome" element={<ManagerHome />} />
+          <Route path="/customerhome" element={<CustomerHome />} />
         </Routes>
       </Router>
   );
