@@ -26,13 +26,13 @@ const CustomerHome = () => {
           </div>
           <ul class="links">
             <li>
-              <a href="#">Home</a>
+              <a href="/dashboard">Home</a>
             </li>
             <li>
               <a href="#">About</a>
             </li>
             <li>
-              <a href="#">Services</a>
+              <a style={{ color: "#2B65EC" }} href="/customerhome">Services</a>
             </li>
             <li>
               <Link to="/dashboard">
@@ -102,7 +102,7 @@ const CustomerHome = () => {
               </div>
               <div>
                 <a
-                  href="#"
+                  href="/reloadaccount"
                   style={{ textDecoration: "none", color: "darkblue" }}
                 >
                   <strong>Reload Account</strong>
