@@ -1,0 +1,27 @@
+.vehicleBox {
+    background: rgba(0, 57, 113, 0.24);
+border-radius: 16px;
+width: 100%;
+}
+
+.leftVehi {
+    font-weight: 400;
+font-size: 12px;
+color: black;
+text-align: right;
+}
+
+.rightVehi {
+    font-weight: 400;
+font-size: 12px;
+color: black;
+text-align: left;
+}
+
+.addBtn {
+    background-color: #003971;
+    color: white;
+    text-align: center;
+    border-radius: 16px;
+    margin-top: 100%;
+}
