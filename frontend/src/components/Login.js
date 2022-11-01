@@ -23,9 +23,9 @@ const Login = () => {
             }}
           ><b>BookMyTickets</b></div>
       <ul class="links">
-        <li><a href='#'>Home</a></li>
+        <li><a href='/'>Home</a></li>
         <li><a href='#'>About</a></li>
-        <li><a href='#'>Services</a></li>
+        <li><a href='/customerhome'>Services</a></li>
         <li><Link to="#"><div class="button">Register </div></Link></li>
       </ul>
       

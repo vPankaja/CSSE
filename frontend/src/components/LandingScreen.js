@@ -19,7 +19,7 @@ const LandingScreen = () => {
           </div>
           <ul class="links">
             <li>
-              <a style={{ color: "#2B65EC" }} href="#">
+              <a style={{ color: "#2B65EC" }} href="/dashboard">
                 Home
               </a>
             </li>
@@ -27,7 +27,7 @@ const LandingScreen = () => {
               <a href="#">About</a>
             </li>
             <li>
-              <a href="#">Services</a>
+              <a href="/customerhome">Services</a>
             </li>
             <li>
               <Link to="/login">

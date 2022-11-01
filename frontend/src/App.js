@@ -8,6 +8,7 @@ import Login from "./components/Login";
 import ManagerHome from "./components/manager/ManagerHome";
 import CustomerHome from "./components/customer/CustomerHome";
 import ReloadAccount from "./components/customer/ReloadAccount";
+import TravelHistory from "./components/customer/TravelHistory";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/managerhome" element={<ManagerHome />} />
           <Route path="/customerhome" element={<CustomerHome />} />
           <Route path="/reloadaccount" element={<ReloadAccount />} />
+          <Route path="/travelhistory" element={<TravelHistory />} />
         </Routes>
       </Router>
   );
