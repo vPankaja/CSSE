@@ -44,8 +44,8 @@ const LandingScreen = () => {
             you change things slightly, you leave marks behind, however small.
             And in return,life - and travel - leaves marks on you."
           </p>
-          <Link to="/">
-            <button href="https://github.com/vPankaja/CSSE/pull/6">
+          <Link to="/reloadaccount">
+            <button>
               Make Payment
             </button>
           </Link>
