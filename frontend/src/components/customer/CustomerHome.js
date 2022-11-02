@@ -75,7 +75,7 @@ const CustomerHome = () => {
               </div>
               <div>
                 <a
-                  href="#"
+                  href="/checkaccbalance"
                   style={{ textDecoration: "none", color: "darkblue" }}
                 >
                   <strong>Check Balance</strong>
@@ -158,7 +158,7 @@ const CustomerHome = () => {
               </div>
               <div>
                 <a
-                  href="#"
+                  href="/travelhistory"
                   style={{ textDecoration: "none", color: "darkblue" }}
                 >
                   <strong>View Travel History</strong>
