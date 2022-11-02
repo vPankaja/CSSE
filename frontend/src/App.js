@@ -15,6 +15,8 @@ import AddRoutes from "./components/manager/AddRoutes";
 import RouteList from "./components/manager/RouteList";
 import UpdateVehicle from "./components/manager/UpdateVehicle"
 import UpdateRoute from "./components/manager/UpdateRoute";
+import TravelHistory from "./components/customer/TravelHistory";
+
 
 function App() {
   return (
@@ -33,6 +35,8 @@ function App() {
           <Route path="/routelist" element={<RouteList />} />
           <Route path="/updateVehicle/:id" element={<UpdateVehicle/>} />
           <Route path="/updateRoute/:id" element={<UpdateRoute/>} />
+          <Route path="/travelhistory" element={<TravelHistory />} />
+
         </Routes>
       </Router>
   );
