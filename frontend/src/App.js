@@ -1,7 +1,6 @@
 import React from "react";
-import { BrowserRouter as Router, Routes } from "react-router-dom";
+import { BrowserRouter,  Route, Routes } from "react-router-dom";
 
-import { Route, Switch } from "react-router";
 import LandingScreen from "./components/LandingScreen";
 import PlanTimeTable from "./components/manager/PlanTimeTable";
 import Login from "./components/Login";
@@ -16,11 +15,13 @@ import RouteList from "./components/manager/RouteList";
 import UpdateVehicle from "./components/manager/UpdateVehicle"
 import UpdateRoute from "./components/manager/UpdateRoute";
 import TravelHistory from "./components/customer/TravelHistory";
+import Payment from "./components/customer/Payment";
+import CheckAccBalance from "./components/customer/CheckAccBalance";
 
 
 function App() {
   return (
-      <Router>
+      <BrowserRouter>
         <Routes>
           <Route path="/dashboard" element={<LandingScreen />} />
           <Route path="/plantimetable" element={<PlanTimeTable />} />
@@ -37,8 +38,12 @@ function App() {
           <Route path="/updateRoute/:id" element={<UpdateRoute/>} />
           <Route path="/travelhistory" element={<TravelHistory />} />
 
+          <Route path="/payment" element={<Payment />} />
+          <Route path="/checkaccbalance" element={<CheckAccBalance />} />
+
+
         </Routes>
-      </Router>
+      </BrowserRouter>
   );
 }
 
