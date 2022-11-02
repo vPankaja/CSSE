@@ -43,7 +43,7 @@ const ManagerHome = () => {
                 <img  src={require("../../res/images/ManagerHome/hom1.png")}/>
             </div>
             <div >
-                <a href='#' style={{textDecoration:"none",color:"darkblue"}}><strong>Vehicle Management</strong></a>
+                <a href='/vehiclelist' style={{textDecoration:"none",color:"darkblue"}}><strong>Vehicle Management</strong></a>
             </div>
             <span style={{fontSize:"14px",color:"#B2BEB5"}}>Manage your vehicle</span>
             <span style={{fontSize:"14px",color:"#B2BEB5"}}>details</span>
@@ -54,7 +54,7 @@ const ManagerHome = () => {
                 <img  src={require("../../res/images/ManagerHome/hom2.png")}/>
             </div>
             <div >
-                <a href='#' style={{textDecoration:"none",color:"darkblue"}}><strong>Routes Management</strong></a>
+                <a href='/routelist' style={{textDecoration:"none",color:"darkblue"}}><strong>Routes Management</strong></a>
             </div>
             <span style={{fontSize:"14px",color:"#B2BEB5"}}>Manage the vehicle</span>
             <span style={{fontSize:"14px",color:"#B2BEB5"}}>Routes</span>
@@ -65,7 +65,7 @@ const ManagerHome = () => {
                 <img  src={require("../../res/images/ManagerHome/hom3.png")}/>
             </div>
             <div >
-                <a href='#' style={{textDecoration:"none",color:"darkblue"}}><strong>Plan Timetable</strong></a>
+                <a href='/plantimetable' style={{textDecoration:"none",color:"darkblue"}}><strong>Plan Timetable</strong></a>
             </div>
             <span style={{fontSize:"14px",color:"#B2BEB5"}}>Plan the timetable</span>
 
@@ -76,7 +76,7 @@ const ManagerHome = () => {
                 <img  src={require("../../res/images/ManagerHome/hom4.png")}/>
             </div>
             <div >
-                <a href='#' style={{textDecoration:"none",color:"darkblue"}}><strong>Monitor Networks</strong></a>
+                <a href='/managetimetables' style={{textDecoration:"none",color:"darkblue"}}><strong>Manage TimeTable</strong></a>
             </div>
             <span style={{fontSize:"14px",color:"#B2BEB5"}}>Monitor overcrowding</span>
             <span style={{fontSize:"14px",color:"#B2BEB5"}}>Networks</span>
