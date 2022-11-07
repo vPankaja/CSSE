@@ -25,10 +25,10 @@ const registerUser = asyncHandler(async (req,res) => {
 })
 
 const login = asyncHandler(async (req,res) => {
-    const {username, password} = req.body
+    const {username} = req.body
 
     try {
-        Users.findOne({ email: username, password: password }).then((resp)=> {
+        Users.findOne({ email: username}).then((resp)=> {
             res.json(resp)
             res.status(201)
         }).catch((err) => {
