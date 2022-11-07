@@ -1,6 +1,6 @@
 import  mongoose  from 'mongoose';
 
-const journeySchema = mongoose.Schema(
+const fullJourneySchema = mongoose.Schema(
     {
         timetableId: {
             type: String,
@@ -10,15 +10,15 @@ const journeySchema = mongoose.Schema(
             type: String,
             required: true,
         },
-        hours: {
-            type: Number,
+        startTime: {
+            type: String,
             required: true
         },
-        mins: {
-            type: Number,
+        endTime: {
+            type: String,
             required: true
         },
-        seconds: {
+        cost: {
             type: Number,
             required: true
         }
@@ -28,6 +28,6 @@ const journeySchema = mongoose.Schema(
     }
 )
 
-const Journey = mongoose.model("Journey", journeySchema);
+const FullJourney = mongoose.model("FullJourneys", fullJourneySchema);
 
-export default Journey;
+export default FullJourney;
