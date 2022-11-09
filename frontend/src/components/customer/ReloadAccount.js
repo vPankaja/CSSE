@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import AOS from "aos";
+import swal from "sweetalert";
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
 import "../../res/css/customer.css";
@@ -9,6 +10,55 @@ AOS.init({
 });
 
 const ReloadAccount = () => {
+  const [fname, setFName] = useState("");
+  const [lname, setLName] = useState("");
+  const [email, setEmail] = useState("");
+  const [accNo, setAccNo] = useState("");
+  const [amount, setAmount] = useState(0);
+  const [phone, setPhone] = useState("");
+
+  const checkout = function() {
+    console.log(fname)
+    if(fname==null || fname=='') {
+        console.log('hhh')
+        showErrorPopup("First name is required")
+        return false;
+    }
+    else if(lname==null || lname=='') {
+        showErrorPopup("last name type is required")
+        return false;
+    }
+    else if(email==null || email=='') {
+        showErrorPopup("Email is required")
+        return false;
+    }
+    else if(accNo==null || accNo=='') {
+        showErrorPopup("Account number is required")
+        return false;
+    }
+    else if(amount==null || amount=='') {
+        showErrorPopup("Amount is required")
+        return false;
+    }
+    else if(phone==null || phone=='') {
+        showErrorPopup("Phone number is required")
+        return false;
+    }
+    else {
+        window.location.href=`/payment/${amount}`
+    }
+}
+
+const showErrorPopup = function(message) {
+    swal({
+        title: message,
+        icon: "error",
+        buttons: true,
+      }).then(() => {
+        
+      })
+}
+
   return (
     <div class="landing-page">
       <div class="container">
@@ -77,15 +127,17 @@ const ReloadAccount = () => {
                   type="text"
                   name="firstname"
                   placeholder="First Name"
+                  onChange={e => {setFName(e.target.value)}}
                   required
-                ></input>
+                />
                 <input
                   className="input1"
                   type="text"
                   name="lastname"
                   placeholder="Last Name"
+                  onChange={e => {setLName(e.target.value)}}
                   required
-                ></input>
+                />
               </div>
               <div style={{ marginBottom: "20px" }}>
                 <input
@@ -93,8 +145,9 @@ const ReloadAccount = () => {
                   type="email"
                   name="email"
                   placeholder="Email Address"
+                  onChange={e => {setEmail(e.target.value)}}
                   required
-                ></input>
+                />
               </div>
               <div style={{ marginBottom: "20px" }}>
                 <input
@@ -102,8 +155,9 @@ const ReloadAccount = () => {
                   type="text"
                   name="accountnumber"
                   placeholder="Account Number"
+                  onChange={e => {setAccNo(e.target.value)}}
                   required
-                ></input>
+                />
               </div>
               <div style={{ marginBottom: "20px" }}>
                 <input
@@ -111,8 +165,9 @@ const ReloadAccount = () => {
                   type="number"
                   name="amount"
                   placeholder="Amount"
+                  onChange={e => {setAmount(e.target.value)}}
                   required
-                ></input>
+                />
               </div>
               <div style={{ marginBottom: "30px" }}>
                 <input
@@ -120,12 +175,13 @@ const ReloadAccount = () => {
                   type="number"
                   name="phoneno"
                   placeholder="Phone No"
+                  onChange={e => {setPhone(e.target.value)}}
                   required
-                ></input>
+                />
               </div>
 
               <div style={{ marginLeft: "100px" }}>
-                <Link to="/payment">
+                <Link onClick={checkout}>
                   <button class="btn1" type="submit">
                     Next
                   </button>

@@ -17,6 +17,7 @@ import UpdateRoute from "./components/manager/UpdateRoute";
 import TravelHistory from "./components/customer/TravelHistory";
 import Payment from "./components/customer/Payment";
 import CheckAccBalance from "./components/customer/CheckAccBalance";
+import CheckTimetables from "./components/customer/CheckTimetable";
 
 
 function App() {
@@ -38,8 +39,9 @@ function App() {
           <Route path="/updateRoute/:id" element={<UpdateRoute/>} />
           <Route path="/travelhistory" element={<TravelHistory />} />
 
-          <Route path="/payment" element={<Payment />} />
+          <Route path="/payment/:amount" element={<Payment />} />
           <Route path="/checkaccbalance" element={<CheckAccBalance />} />
+          <Route path="/checktimetable" element={<CheckTimetables/>} />
 
 
         </Routes>

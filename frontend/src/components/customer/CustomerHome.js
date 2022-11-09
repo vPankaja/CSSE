@@ -128,7 +128,7 @@ const CustomerHome = () => {
               <img src={require("../../res/images/CustomerHome/H3.png")} />
             </div>
             <div>
-              <a href="#" style={{ textDecoration: "none", color: "darkblue" }}>
+              <a href="/checktimetable" style={{ textDecoration: "none", color: "darkblue" }}>
                 <strong>Check Timetable</strong>
               </a>
             </div>
