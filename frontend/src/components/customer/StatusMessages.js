@@ -1,6 +1,6 @@
-import React, {useReducer} from 'react';
+import React, { useReducer } from "react";
 
-const StatusMessages = ({messages}) =>
+const StatusMessages = ({ messages }) =>
   messages.length ? (
     <div id="messages" role="alert">
       {messages.map((m, i) => (
@@ -8,17 +8,21 @@ const StatusMessages = ({messages}) =>
       ))}
     </div>
   ) : (
-    ''
+    ""
   );
 
 const maybeLink = (m) => {
-  const piDashboardBase = 'https://dashboard.stripe.com/test/payments';
+  const piDashboardBase = "https://dashboard.stripe.com/test/payments";
   return (
-    <span dangerouslySetInnerHTML={{__html: m.replace(
-      /(pi_(\S*)\b)/g,
-      `<a href="${piDashboardBase}/$1" target="_blank">$1</a>`
-    )}}></span>
-  )
+    <span
+      dangerouslySetInnerHTML={{
+        __html: m.replace(
+          /(pi_(\S*)\b)/g,
+          `<a href="${piDashboardBase}/$1" target="_blank">$1</a>`
+        ),
+      }}
+    ></span>
+  );
 };
 
 // Small hook for adding a message to a list of messages.
@@ -31,4 +35,4 @@ const useMessages = () => {
 };
 
 export default StatusMessages;
-export {useMessages};
+export { useMessages };

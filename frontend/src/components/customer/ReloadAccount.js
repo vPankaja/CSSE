@@ -41,45 +41,100 @@ const ReloadAccount = () => {
             </li>
           </ul>
         </div>
-        </div>
-        <div
-          style={{
-            fontSize: "22px",
-            marginBottom: "-50px",
-            textAlign: "center",
-            marginTop: "40px",
-          }}
-        >
-          <strong style={{ color: "darkblue" }}>
-            RELOAD ACCOUNT
-          </strong>
-          <br></br>
-          <span style={{ fontSize: "14px", color: "#B2BEB5" }}>
+      </div>
+      <div
+        style={{
+          fontSize: "22px",
+          marginBottom: "-50px",
+          textAlign: "center",
+          marginTop: "40px",
+        }}
+      >
+        <strong style={{ color: "darkblue" }}>RELOAD ACCOUNT</strong>
+        <br></br>
+        <span style={{ fontSize: "14px", color: "#B2BEB5" }}>
           “Reload your account without any delay to continue your journey..”
-          </span>
-        </div>
+        </span>
+      </div>
 
-        
-        <div className="container2">
+      <div className="container2">
         <div class="register-photo">
-        <div class="form-container">
+          <div class="form-container">
             <div class="image-holder"></div>
             <form method="post">
+              <br></br>
+              <p style={{ fontSize: "22px", marginBottom: "40px" }}>
+                <strong style={{ color: "darkblue" }}>Fill Your Details</strong>
                 <br></br>
-                <p style={{fontSize:"22px",marginBottom:"40px"}}><strong style={{color:"darkblue"}}>Fill Your Details</strong><br></br>
-                <span style={{fontSize:"11px"}}>Fill your Account Details & Amount to Pay</span></p>
-                <div style={{marginBottom:"20px"}}><input class="input1" style={{marginRight:"20px"}}  type="text" name="firstname" placeholder="First Name" required></input>
-                <input className='input1' type="text" name="lastname" placeholder="Last Name" required></input></div>
-                <div style={{marginBottom:"20px"}}><input className='input2' type="email" name="email" placeholder="Email Address" required></input></div>
-                <div style={{marginBottom:"20px"}}><input className='input2' type="text" name="accountnumber" placeholder="Account Number" required></input></div>
-                <div style={{marginBottom:"20px"}}><input className='input2' type="number" name="amount" placeholder="Amount" required></input></div>
-                <div style={{marginBottom:"30px"}}><input className='input2' type="number" name="phoneno" placeholder="Phone No" required></input></div>
-                
-                <div style={{marginLeft:"100px"}}>
-                <Link to="/payment" ><button class="btn1" type="submit">Next</button></Link></div></form>
+                <span style={{ fontSize: "11px" }}>
+                  Fill your Account Details & Amount to Pay
+                </span>
+              </p>
+              <div style={{ marginBottom: "20px" }}>
+                <input
+                  class="input1"
+                  style={{ marginRight: "20px" }}
+                  type="text"
+                  name="firstname"
+                  placeholder="First Name"
+                  required
+                ></input>
+                <input
+                  className="input1"
+                  type="text"
+                  name="lastname"
+                  placeholder="Last Name"
+                  required
+                ></input>
+              </div>
+              <div style={{ marginBottom: "20px" }}>
+                <input
+                  className="input2"
+                  type="email"
+                  name="email"
+                  placeholder="Email Address"
+                  required
+                ></input>
+              </div>
+              <div style={{ marginBottom: "20px" }}>
+                <input
+                  className="input2"
+                  type="text"
+                  name="accountnumber"
+                  placeholder="Account Number"
+                  required
+                ></input>
+              </div>
+              <div style={{ marginBottom: "20px" }}>
+                <input
+                  className="input2"
+                  type="number"
+                  name="amount"
+                  placeholder="Amount"
+                  required
+                ></input>
+              </div>
+              <div style={{ marginBottom: "30px" }}>
+                <input
+                  className="input2"
+                  type="number"
+                  name="phoneno"
+                  placeholder="Phone No"
+                  required
+                ></input>
+              </div>
+
+              <div style={{ marginLeft: "100px" }}>
+                <Link to="/payment">
+                  <button class="btn1" type="submit">
+                    Next
+                  </button>
+                </Link>
+              </div>
+            </form>
+          </div>
         </div>
-    </div>
-    </div>
+      </div>
     </div>
   );
 };
