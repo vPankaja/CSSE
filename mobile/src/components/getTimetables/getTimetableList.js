@@ -3,6 +3,7 @@ import axios from "axios"
 import swal from "sweetalert";
 import "../../res/css/timetables.css"
 import busImg from "../../res/images/timetables/peopleBus.png"
+import Footer from "../footer/footer";
 
 export default function GetTimetableList() {
     const [timetabs, setTimetabs] = useState([])
@@ -63,6 +64,7 @@ export default function GetTimetableList() {
                     })
                 }
             </div>
+            <Footer />
         </>
     )
 }

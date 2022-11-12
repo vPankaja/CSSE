@@ -23,5 +23,7 @@ text-align: left;
     color: white;
     text-align: center;
     border-radius: 16px;
-    margin-top: 100%;
+    position: fixed;
+    top: 80%;
+    width: 78%;
 }

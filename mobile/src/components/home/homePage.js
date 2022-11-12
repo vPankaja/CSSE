@@ -7,8 +7,23 @@ import box2 from "../../res/images/home/Spjald2.png";
 import box3 from "../../res/images/home/Spjald3.png";
 import box4 from "../../res/images/home/Spjald4.png";
 import Footer from "../footer/footer";
+import { Link } from "react-router-dom";
 
 export default function HomePage() {
+  const [checked, setChecked] = useState("");
+
+  const getChecked = function () {
+    if (localStorage.getItem("çheckedIn") == true) {
+      setChecked("CHECKOUT");
+    } else {
+      setChecked("CHECKIN");
+    }
+  };
+
+  useEffect(() => {
+    getChecked();
+  }, []);
+
   return (
     <>
       <div className="row m-0 heading" style={{ width: "100%" }}>
@@ -36,13 +51,14 @@ export default function HomePage() {
       <div>
         <div className="mt-3 optionText">Choose your option to go</div>
         <div className="row row-col-2 row-col-sm-3 m-0 pt-3 pb-5">
-
           {/* Check balance */}
           <div className="col-6 col-sm-4 homebox">
             <img src={box1} style={{ width: "100%" }} alt="" />
             <div className="p-1 boxTitle">Check Balance</div>
-            <div style={{ "text-align": "center" }} className="py-2">
-              <div className="btn boxBtn">Click</div>
+            <div style={{ textAlign: "center" }} className="py-2">
+              <Link to="/balance">
+                <div className="btn boxBtn">Click</div>
+              </Link>
             </div>
           </div>
 
@@ -50,8 +66,15 @@ export default function HomePage() {
           <div className="col-6 col-sm-4 homebox">
             <img src={box2} style={{ width: "100%" }} alt="" />
             <div className="p-1 boxTitle">Reload Account</div>
-            <div style={{ "text-align": "center" }} className="py-2">
-              <div className="btn boxBtn" onClick={() => {window.location.href="/reload"}}>Click</div>
+            <div style={{ textAlign: "center" }} className="py-2">
+              <div
+                className="btn boxBtn"
+                onClick={() => {
+                  window.location.href = "/reload";
+                }}
+              >
+                Click
+              </div>
             </div>
           </div>
 
@@ -59,8 +82,15 @@ export default function HomePage() {
           <div className="col-6 col-sm-4 homebox">
             <img src={box3} style={{ width: "100%" }} alt="" />
             <div className="p-1 boxTitle">Check Timetable</div>
-            <div style={{ "text-align": "center" }} className="py-2">
-              <div className="btn boxBtn" onClick={e => {window.location.href="/gettimetableList"}}>Click</div>
+            <div style={{ textAlign: "center" }} className="py-2">
+              <div
+                className="btn boxBtn"
+                onClick={(e) => {
+                  window.location.href = "/gettimetableList";
+                }}
+              >
+                Click
+              </div>
             </div>
           </div>
 
@@ -68,11 +98,21 @@ export default function HomePage() {
           <div className="col-6 col-sm-4 homebox">
             <img src={box4} style={{ width: "100%" }} alt="" />
             <div className="p-1 boxTitle">View Travel History</div>
-            <div style={{ "text-align": "center" }} className="py-2">
+            <div style={{ textAlign: "center" }} className="py-2">
               <div className="btn boxBtn">Click</div>
             </div>
           </div>
         </div>
+        <div className="row" style={{ position: "fixed" }}>
+          <div className="col-1"></div>
+          <div className="col-10">
+            <Link to="/startJourney">
+              <div className="btn checkinBtn mb-5">{checked}</div>
+            </Link>
+          </div>
+          <div className="col-1"></div>
+        </div>
+        <div style={{ marginBottom: "120px" }}></div>
       </div>
       <Footer />
     </>

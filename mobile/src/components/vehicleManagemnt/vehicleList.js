@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../../res/css/vehicles.css";
 import Footer from "../footer/footer";
+import { Link } from "react-router-dom";
 
 export default function VehicleList() {
   const [vehicles, setVehicles] = useState([]);
@@ -24,11 +25,11 @@ export default function VehicleList() {
   return (
     <>
       <div className="row m-0 heading" style={{ width: "100%" }}>
-        <div className="title" style={{ "text-align": "center" }}>
+        <div className="title" style={{ textAlign: "center" }}>
           Vehicles
         </div>
       </div>
-      <div style={{ position: "absolute", width: "100%" }}>
+      <div style={{ width: "100%", marginBottom: '120px' }}>
         {vehicles
           .filter((val) => {
             return val;
@@ -59,7 +60,7 @@ export default function VehicleList() {
                             className="btn btn-danger"
                             style={{
                               width: "100%",
-                              "border-radius": "15px",
+                              borderRadius: "15px",
                               border: "none",
                             }}
                           >
@@ -79,7 +80,9 @@ export default function VehicleList() {
       <div className="row m-0 py-3">
         <div className="col-1"></div>
         <div className="col-10">
-          <div className="addBtn p-3" onClick={() => window.location.href="/addVehicle"}>Add Vehicle</div>
+          <Link to="/addVehicle">
+            <div className="addBtn p-3">Add Vehicle</div>
+          </Link>
           <div className="col-1"></div>
         </div>
       </div>

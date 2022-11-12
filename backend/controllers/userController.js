@@ -41,4 +41,35 @@ const login = asyncHandler(async (req,res) => {
     }
 })
 
-export { registerUser, login }
+// Get user details
+const getInfo = asyncHandler(async (req,res) => {
+    const userId = req.params.id
+
+    Users.findById(userId).then((resp) => {
+        res.json(resp)
+        res.status(201)
+    }).catch((err) => {
+        console.log(err)
+        res.status(400)
+    })
+})
+
+// Reload acc
+const reloadAcc = asyncHandler(async (req,res) => {
+    const {userId, amount} = req.body
+
+    Users.findById(userId).then((respo) => {
+        Users.findByIdAndUpdate(userId, {balance: respo.balance + amount}).then((resp) => {
+            res.json(resp)
+            res.status(201)
+        }).catch(err => {
+            console.log(err)
+            res.status(400)
+        })
+    }).catch(err => {
+        console.log(err)
+        res.status(400)
+    })
+})
+
+export { registerUser, login, getInfo, reloadAcc }
