@@ -1,31 +1,26 @@
 import  mongoose  from 'mongoose';
 
-const UserSchema = mongoose.Schema(
+const fullJourneySchema = mongoose.Schema(
     {
-        name: {
+        timetableId: {
             type: String,
             required: true,
         },
-        email: {
+        userId: {
             type: String,
             required: true,
         },
-        phoneNumber: {
+        startTime: {
             type: String,
             required: true
         },
-        type: {
+        endTime: {
             type: String,
             required: true
         },
-        password: {
-            type: String,
-            required: true
-        },
-        balance: {
+        cost: {
             type: Number,
-            required: false,
-            default: 0
+            required: true
         }
     },
     {
@@ -33,6 +28,6 @@ const UserSchema = mongoose.Schema(
     }
 )
 
-const Users = mongoose.model("Users", UserSchema);
+const FullJourney = mongoose.model("FullJourneys", fullJourneySchema);
 
-export default Users;
+export default FullJourney;

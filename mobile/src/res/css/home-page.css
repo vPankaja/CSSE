@@ -44,3 +44,13 @@ text-align: center;
     color: white;
     padding: 10px;
 }
+
+.checkinBtn {
+  background-color: #003971;
+    color: white;
+    width: 90%;
+    position: fixed;
+    padding: 10px;
+    left: 20px;
+    bottom: 60px;
+}

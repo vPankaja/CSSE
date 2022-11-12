@@ -9,6 +9,7 @@ import box4 from "../../res/images/adminhome/Spjald4.png";
 import box5 from "../../res/images/adminhome/Spjald5.png";
 import box6 from "../../res/images/adminhome/Spjald6.png";
 import Footer from "../footer/footer.js";
+import { Link } from "react-router-dom";
 
 export default function AdminHome() {
   return (
@@ -23,18 +24,19 @@ export default function AdminHome() {
         <div
           className="row m-0 py-3"
           style={{ display: "flex", width: "100%" }}
-        >
-        </div>
+        ></div>
       </div>
-      <div style={{position: "absolute", "margin-top": "200px"}}>
+      <div style={{ position: "absolute", "margin-top": "200px" }}>
         <div className="mt-3 optionTextAdmin">Choose your option to go</div>
         <div className="row row-col-2 row-col-sm-3 m-0 pt-3 pb-5">
           {/* Check balance */}
           <div className="col-6 col-sm-4 homeboxAdmin">
             <img src={box1} style={{ width: "100%" }} alt="" />
             <div className="p-1 boxTitleAdmin">Vehicle Management</div>
-            <div style={{ "text-align": "center" }} className="py-2">
-              <div className="btn boxBtnAdmin" onClick={e => {window.location.href="/vehicleList"}}>Click</div>
+            <div style={{ textAlign: "center" }} className="py-2">
+              <Link to="/vehicleList">
+                <div className="btn boxBtnAdmin">Click</div>
+              </Link>
             </div>
           </div>
 
@@ -42,7 +44,7 @@ export default function AdminHome() {
           <div className="col-6 col-sm-4 homeboxAdmin">
             <img src={box2} style={{ width: "100%" }} alt="" />
             <div className="p-1 boxTitleAdmin">Routes Management</div>
-            <div style={{ "text-align": "center" }} className="py-2">
+            <div style={{ textAlign: "center" }} className="py-2">
               <div className="btn boxBtnAdmin">Click</div>
             </div>
           </div>
@@ -51,15 +53,10 @@ export default function AdminHome() {
           <div className="col-6 col-sm-4 homeboxAdmin">
             <img src={box3} style={{ width: "100%" }} alt="" />
             <div className="p-1 boxTitleAdmin">Plan Timetable</div>
-            <div style={{ "text-align": "center" }} className="py-2">
-              <div
-                className="btn boxBtnAdmin"
-                onClick={() => {
-                  window.location.href = "/planTimetable";
-                }}
-              >
-                Click
-              </div>
+            <div style={{ textAlign: "center" }} className="py-2">
+              <Link to="/planTimetable">
+                <div className="btn boxBtnAdmin">Click</div>
+              </Link>
             </div>
           </div>
 
@@ -67,7 +64,7 @@ export default function AdminHome() {
           <div className="col-6 col-sm-4 homeboxAdmin">
             <img src={box4} style={{ width: "100%" }} alt="" />
             <div className="p-1 boxTitleAdmin">Monitor Networks</div>
-            <div style={{ "text-align": "center" }} className="py-2">
+            <div style={{ textAlign: "center" }} className="py-2">
               <div className="btn boxBtnAdmin">Click</div>
             </div>
           </div>
@@ -76,7 +73,7 @@ export default function AdminHome() {
           <div className="col-6 col-sm-4 homeboxAdmin">
             <img src={box5} style={{ width: "100%" }} alt="" />
             <div className="p-1 boxTitleAdmin">Check Suspects</div>
-            <div style={{ "text-align": "center" }} className="py-2">
+            <div style={{ textAlign: "center" }} className="py-2">
               <div className="btn boxBtnAdmin">Click</div>
             </div>
           </div>
@@ -85,7 +82,7 @@ export default function AdminHome() {
           <div className="col-6 col-sm-4 homeboxAdmin">
             <img src={box6} style={{ width: "100%" }} alt="" />
             <div className="p-1 boxTitleAdmin">Calculate Penalty</div>
-            <div style={{ "text-align": "center" }} className="py-2">
+            <div style={{ textAlign: "center" }} className="py-2">
               <div className="btn boxBtnAdmin">Click</div>
             </div>
           </div>
