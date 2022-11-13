@@ -16,6 +16,8 @@ import ShowBalance from "./components/Balance/showBalance";
 import ReloadSuccess from "./components/reload/reloadSuccess";
 import RoutesList from "./components/routesManagement/routesList";
 import CreateRoute from "./components/routesManagement/createRoute";
+import GenerateQr from "./generateQR/generateQr";
+import Register from "./components/register";
 
 function App() {
   return (
@@ -35,6 +37,8 @@ function App() {
         <Route path="/home" element={<HomePage />} />
         <Route path="/routesList" element={<RoutesList />} />
         <Route path="/createRoute" element={<CreateRoute />} />
+        <Route path="/generateQr" element={<GenerateQr />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/" element={<LoginPage />} />
       </Routes>
     </Router>
