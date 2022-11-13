@@ -13,12 +13,21 @@ export default function HomePage() {
   const [checked, setChecked] = useState("");
 
   const getChecked = function () {
-    if (localStorage.getItem("çheckedIn") == true) {
+    if (localStorage.getItem("checkedIn") == true) {
+      console.log('gg')
       setChecked("CHECKOUT");
     } else {
       setChecked("CHECKIN");
     }
   };
+
+  const check = function () {
+    if (localStorage.getItem("çheckedIn") == true) {
+      window.location.href = "/endJourney"
+    } else {
+      window.location.href = "/startJourney"
+    }
+  }
 
   useEffect(() => {
     getChecked();
@@ -106,9 +115,7 @@ export default function HomePage() {
         <div className="row" style={{ position: "fixed" }}>
           <div className="col-1"></div>
           <div className="col-10">
-            <Link to="/startJourney">
-              <div className="btn checkinBtn mb-5">{checked}</div>
-            </Link>
+              <div className="btn checkinBtn mb-5" onClick={check}>{checked}</div>
           </div>
           <div className="col-1"></div>
         </div>

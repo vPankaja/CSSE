@@ -2,24 +2,35 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../../res/css/timetables.css";
 import Footer from "../footer/footer";
+import busImg from "../../res/images/timetables/peopleBus.png";
 import { Link } from "react-router-dom";
 
 export default function DriverTimetables() {
   const [timetabs, setTimetabs] = useState([]);
+  const busNo = localStorage.getItem("busNo");
+  const routeName = localStorage.getItem("route");
 
-  const getAllRoutes = function () {
+  const getTimetables = function () {
+    const data = {
+      busNo,
+      routeName,
+    };
     axios
-      .get("http://localhost:8070/api/trMnger/getAllRoutes")
+      .post("http://localhost:8070/api/driver/getTimeforDriver", data)
       .then((res) => {
-        setRoutes(res.data);
+        setTimetabs(res.data);
       })
       .catch((err) => {
         console.log(err);
       });
   };
 
+  const openQR = function (id) {
+    window.location.href = `/generateQr/${id}`
+  }
+
   useEffect(() => {
-    getAllRoutes();
+    getTimetables();
   }, []);
 
   return (
@@ -48,6 +59,19 @@ export default function DriverTimetables() {
                           <div>Date : {f.date}</div>
                           <div>Time : {f.time}</div>
                         </div>
+                      </div>
+                      <div className="row mt-2 m-0">
+                        <div className="col-4"></div>
+                        <div className="col-4">
+                          <div
+                            className="btn"
+                            style={{ width: "100%", backgroundColor: "#003971", borderRadius: "10px", color: "white" }}
+                            onClick={e => openQR(f._id)}
+                          >
+                            Start
+                          </div>
+                        </div>
+                        <div className="col-4"></div>
                       </div>
                     </div>
                   </div>

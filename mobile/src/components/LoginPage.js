@@ -43,8 +43,14 @@ export default function LoginPage() {
             console.log(res);
             localStorage.setItem("userId", res.data._id);
             localStorage.setItem("userType", res.data.type);
+            if(res.data.type == "driver") {
+              localStorage.setItem("route", res.data.routeNo);
+              localStorage.setItem("busNo", res.data.busNo);
+            }
             if (res.data.type == "passenger") {
               window.location.href = "/home";
+            } else if (res.data.type == "driver") {
+              window.location.href = "/driverTimetables"
             } else {
               window.location.href = "/adminhome";
             }

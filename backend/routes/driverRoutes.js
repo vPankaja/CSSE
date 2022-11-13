@@ -1,8 +1,11 @@
 import express from "express";
 const router = express.Router();
 
-import {getTimetabByBusNo} from "../controllers/driverController.js"
+import {getTimetabByBusNo, findVehicle, registerDriver, deleteTimetable} from "../controllers/driverController.js"
 
-router.get("/getTimeforDriver", getTimetabByBusNo)
+router.post("/getTimeforDriver", getTimetabByBusNo)
+router.post("/findvehicle", findVehicle)
+router.post("/registerDriver", registerDriver)
+router.delete("/deleteTimetable/:id", deleteTimetable)
 
 export default router

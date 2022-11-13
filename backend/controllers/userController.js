@@ -24,6 +24,27 @@ const registerUser = asyncHandler(async (req,res) => {
     }
 })
 
+// Register driver
+const registerDriver = asyncHandler(async (req,res) => {
+    const {name,nic,dob, email, phoneNumber, type, password, busNo, routeNo} = req.body
+
+    const User = await Users({
+        name,nic, dob, email, phoneNumber, type, password, busNo, routeNo
+    })
+
+    try {
+        User.save().then(() => {
+            res.status(201).json(User)
+        }).catch((err) => {
+            console.log(err)
+        })
+    }
+    catch {
+        res.json({})
+        res.status(400)
+    }
+})
+
 const login = asyncHandler(async (req,res) => {
     const {username} = req.body
 
@@ -45,7 +66,7 @@ const login = asyncHandler(async (req,res) => {
 const getInfo = asyncHandler(async (req,res) => {
     const userId = req.params.id
 
-    User.findById(userId).then((resp) => {
+    Users.findById(userId).then((resp) => {
         res.json(resp)
         res.status(201)
     }).catch((err) => {
@@ -63,9 +84,10 @@ const getAllUsers = asyncHandler(async (req, res) => {
 // Reload acc
 const reloadAcc = asyncHandler(async (req,res) => {
     const {userId, amount} = req.body
+    const amt = parseInt(amount)
 
     Users.findById(userId).then((respo) => {
-        Users.findByIdAndUpdate(userId, {balance: respo.balance + amount}).then((resp) => {
+        Users.findByIdAndUpdate(userId, {balance: parseInt(respo.balance) + amt}).then((resp) => {
             res.json(resp)
             res.status(201)
         }).catch(err => {
@@ -78,4 +100,4 @@ const reloadAcc = asyncHandler(async (req,res) => {
     })
 })
 
-export { registerUser, login, getInfo,getAllUsers, reloadAcc }
+export { registerUser, login, getInfo,getAllUsers, reloadAcc, registerDriver }

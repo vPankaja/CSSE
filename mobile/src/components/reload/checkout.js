@@ -35,7 +35,7 @@ export default function Checkout() {
       }
 
       axios.post('http://localhost:8070/api/user/reload', data).then((res) => {
-
+        window.location.href = "/successReload"
       })
     }
   };
@@ -77,7 +77,7 @@ export default function Checkout() {
 
       <div className="mt-5 mx-4">
         <div className="labelCheckout mt-3">Card Number</div>
-        <input type="number" className="checkoutInp" />
+        <input type="tel" maxLength="19" pattern="[0-9\s]{13,19}" className="checkoutInp" onChange={e => setCardNo(e.target.value)}/>
         <img
           src={masterCard}
           style={{
@@ -96,7 +96,7 @@ export default function Checkout() {
         />
 
         <div className="labelCheckout mt-3">Cardholder Name</div>
-        <input type="text" className="checkoutInp" />
+        <input type="text" className="checkoutInp" onChange={e => setName(e.target.value)} />
 
         <div className="row m-0">
           <div className="col-6 p-0">
@@ -105,6 +105,7 @@ export default function Checkout() {
               type="text"
               className="checkoutInp"
               style={{ width: "70%" }}
+              onChange={e => setExpDate(e.target.value)}
             />
           </div>
           <div className="col-6 p-0">
@@ -113,11 +114,12 @@ export default function Checkout() {
               type="number"
               className="checkoutInp"
               style={{ width: "70%" }}
+              onChange={e => setCvc(e.target.value)}
             />
           </div>
         </div>
 
-        <div className="nextBtn p-3 mt-3" style={{ textAlign: "center" }}>
+        <div className="nextBtn p-3 mt-3" style={{ textAlign: "center" }} onClick={reloadAcc}>
           Pay Now
         </div>
       </div>

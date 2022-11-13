@@ -4,39 +4,23 @@ import { QrReader } from "react-qr-reader";
 import swal from "sweetalert";
 import backImg from "../../res/images/reload/Arrowback.png";
 
-export default function StartJourney() {
+export default function EndJourney() {
   const [qrData, setQrData] = useState("");
   const [sent, setSent] = useState(false)
 
-  const startJourn = function (code) {
-    console.log(code)
-    setQrData(code.toString())
-    console.log(qrData)
-    
-    if(!sent) {
-      startJourney(code)
-      // if(localStorage.getItem('checkedIn') == true) {
-      //   startJourney(code)
-      // }
-      // else {
-      // }
-    }
-  }
-
-  // Start journey
-  const startJourney = function (code) {
-    console.log('jjj')
+  // End journey
+  const endJourney = function (code) {
     const data = {
       timetableId: code,
       userId: localStorage.getItem('userId')
     }
-    axios.post('http://localhost:8070/api/passenger/startJourney', data).then((res) => {
+    axios.post('http://localhost:8070/api/passenger/endJourney', data).then((res) => {
       swal({
-        title: "Checkin Successful",
+        title: "Checkout Successful",
         icon: "success",
         buttons: true
     }).then(() => {
-      localStorage.setItem('checkedIn', true)
+      localStorage.setItem('çheckedIn', false)
         window.location.href = "/home"
     })
     })
@@ -52,7 +36,7 @@ export default function StartJourney() {
               if (result) {
                 // setQrData(result.text);
                 setSent(true)
-                startJourn(result.text)
+                endJourney(result.text)
               }
               if (error) {
                 console.log(error);

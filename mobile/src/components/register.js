@@ -7,9 +7,11 @@ import { Link } from "react-router-dom";
 export default function Register() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [pwrd, setPwrd] = useState("");
-  const [phone, setPhone] = useState("");
+  const [password, setPwrd] = useState("");
+  const [phoneNumber, setPhone] = useState("");
   const [type, setType] = useState("");
+  const [nic, setNic] = useState("");
+  const [dob, setDob] = useState("");
   const [rePwrd, setRepwrd] = useState("");
   const [busNo, setBusNo] = useState("");
   const [routeNo, setRouteNo] = useState("");
@@ -19,15 +21,19 @@ export default function Register() {
       showErrorPopup("Name is required");
     } else if (email == null || email == "") {
       showErrorPopup("Email address is required");
-    } else if (pwrd == null || pwrd == "") {
+    } else if (password == null || password == "") {
       showErrorPopup("Password is required");
     } else if (type == null || type == "") {
       showErrorPopup("User type is required");
-    } else if (phone == null || phone == "") {
+    } else if (phoneNumber == null || phoneNumber == "") {
+      showErrorPopup("Phone number is required");
+    } else if (nic == null || nic == "") {
+      showErrorPopup("Phone number is required");
+    } else if (dob == null || dob == "") {
       showErrorPopup("Phone number is required");
     } else if (rePwrd == null || rePwrd == "") {
       showErrorPopup("Phone number is required");
-    } else if (pwrd !== rePwrd) {
+    } else if (password !== rePwrd) {
       showErrorPopup("Passwords do not match");
     } else if (type == "driver") {
       if (busNo == null || busNo == "") {
@@ -35,12 +41,26 @@ export default function Register() {
       } else if (routeNo == null || routeNo == "") {
         showErrorPopup("Route number is required");
       } else {
-        registerDriver();
+        validateBus();
       }
     } else {
       registerUser();
     }
   };
+
+  const validateBus = function () {
+    const data = {
+      busNo: busNo
+    }
+    console.log(data)
+    axios.post("http://localhost:8070/api/driver/findvehicle", data).then((res) => {
+      if(res.data.available == 1) {
+        registerDriver()
+      } else {
+        showErrorPopup("Vehicle is not registered")
+      }
+    })
+  }
 
   const showErrorPopup = function (message) {
     swal({
@@ -50,8 +70,40 @@ export default function Register() {
     }).then(() => {});
   };
 
-  const registerUser = function () {};
-  const registerDriver = function () {};
+  const showSuccessPopup = function (message) {
+    swal({
+      title: message,
+      icon: "success",
+      buttons: true,
+    }).then(() => {});
+  };
+
+  const registerUser = function () {
+    const data = {
+      name,nic,dob, email, phoneNumber, type, password
+    }
+
+    axios.post("http://localhost:8070/api/user/register", data).then(() => {
+      showSuccessPopup("Successfully registered");
+      window.location.href = "/"
+    }).catch(() => {
+      showErrorPopup("Unsuccessful")
+    })
+  };
+
+
+  const registerDriver = function () {
+    const data = {
+      name,nic,dob, email, phoneNumber, type, password, busNo, routeNo
+    }
+
+    axios.post("http://localhost:8070/api/user/registerDriver", data).then(() => {
+      showSuccessPopup("Successfully registered");
+      window.location.href = "/"
+    }).catch(() => {
+      showErrorPopup("Unsuccessful")
+    })
+  };
 
   return (
     <>
@@ -118,6 +170,32 @@ export default function Register() {
                     />
                   </div>
 
+                  {/* Phone */}
+                  <div className="form-outline mb-4">
+                    <input
+                      placeholder="NIC number"
+                      type="text"
+                      id="form2Example28"
+                      className="form-control form-control-lg"
+                      onChange={(e) => {
+                        setNic(e.target.value);
+                      }}
+                    />
+                  </div>
+
+                  {/* Phone */}
+                  <div className="form-outline mb-4">
+                    <input
+                      placeholder="Date of Birth"
+                      type="text"
+                      id="form2Example28"
+                      className="form-control form-control-lg"
+                      onChange={(e) => {
+                        setDob(e.target.value);
+                      }}
+                    />
+                  </div>
+
                   {/* Password */}
                   <div className="form-outline mb-4">
                     <input
@@ -150,10 +228,11 @@ export default function Register() {
                       className="btn btn-info dropdown-toggle"
                       id="drops"
                       onChange={(e) => {
+                        console.log(e.target.value)
                         setType(e.target.value);
                       }}
                     >
-                      <option value="passenger" selected>
+                      <option value="passenger">
                         Passenger
                       </option>
                       <option value="driver">Driver</option>
@@ -176,7 +255,7 @@ export default function Register() {
 
                       <div className="form-outline mb-4">
                         <input
-                          placeholder="Bus number"
+                          placeholder="Route number"
                           type="text"
                           id="form2Example28"
                           className="form-control form-control-lg"

@@ -7,6 +7,7 @@ import {
   getInfo,
   getAllUsers,
   reloadAcc,
+  registerDriver
 } from "../controllers/userController.js";
 
 router.post("/register", registerUser);
@@ -14,5 +15,6 @@ router.post("/login", login);
 router.get("/info/:id", getInfo);
 router.get("/allusers", getAllUsers);
 router.post("/reload", reloadAcc);
+router.post("/registerDriver", registerDriver);
 
 export default router;

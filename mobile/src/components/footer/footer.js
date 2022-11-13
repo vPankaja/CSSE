@@ -17,6 +17,9 @@ export default function Footer() {
     }).then(() => {
       localStorage.removeItem("userId");
       localStorage.removeItem("userType");
+      localStorage.removeItem("route");
+      localStorage.removeItem("busNo");
+      localStorage.removeItem("checkedIn");
       window.location.href = "/";
     });
   };

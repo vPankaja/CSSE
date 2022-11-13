@@ -1,6 +1,6 @@
 import  mongoose  from 'mongoose';
 
-const UserSchema = mongoose.Schema(
+const DriverSchema = mongoose.Schema(
     {
         name: {
             type: String,
@@ -30,20 +30,13 @@ const UserSchema = mongoose.Schema(
             type: String,
             required: true
         },
-        balance: {
-            type: Number,
-            required: false,
-            default: 0
-        },
         busNo: {
             type: String,
-            required: false,
-            default: ""
+            required: true
         },
         routeNo: {
             type: String,
-            required: false,
-            default: ""
+            required: true
         }
     },
     {
@@ -51,6 +44,6 @@ const UserSchema = mongoose.Schema(
     }
 )
 
-const Users = mongoose.model("Users", UserSchema);
+const Drivers = mongoose.model("Drivers", DriverSchema);
 
-export default Users;
+export default Drivers;

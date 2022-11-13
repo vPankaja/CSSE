@@ -4,6 +4,7 @@
     padding: 10px;
     background-color: #003971;
     height: 75px;
+    width: 100%;
 }
 
 .footercol {
@@ -11,6 +12,7 @@
 }
 
 .footerIcon {
-    width: 50%;
+    width: 30px;
+    height: 30px;
     text-align: center;
 }
