@@ -57,10 +57,29 @@
     background-color: #1F45FC;
 }
 
+.landing-page .container2{
+  background:url(../images/Bubble\ 1.png);
+  padding: 250px 0;
+  background-size:contain;
+background-repeat: no-repeat;
+}
+
+.landing-page .container3{
+  padding-right: 500px;
+  background-size:contain;
+background-repeat: no-repeat;
+}
+.landing-page .container4{
+  padding-left: 700px;
+  background-size:contain;
+background-repeat: no-repeat;
+}
+
 .landing-page .info {
     width: 50%;
     float: left;
-    margin-top: 200px;
+    margin-left: 80px;
+    margin-top: -60px;
 }
 
 .landing-page .info h1 {
@@ -87,11 +106,7 @@
     background-color:#1F45FC;
 }
 
-.landing-page .image {
-    width: 50%;
-    float: right;
-    margin-top: 0px;
-}
+
 
 .landing-page .image img {
     max-width: 100%;
@@ -101,10 +116,7 @@
   clear: both;
 }
 .register-photo {
-    background:url(../images/Bubble\ 1.png);
-    padding: 80px 0;
-    background-size:contain;
-  background-repeat: no-repeat;
+
   }
   
   .register-photo .image-holder {
@@ -115,13 +127,29 @@
     background-size:contain;
     background-repeat: no-repeat;
   }
+  .register-photo .image-holder2 {
+    display: table-cell;
+    width: auto;
+    height: auto;
+    background: url(https://rechapi.com/assets/images/svg/mobile_recharge_service.svg);
+    background-size:contain;
+    background-repeat: no-repeat;
+  }
+
+  .register-photo .image-holder3 {
+    display: table-cell;
+    width: auto;
+    height: auto;
+    background: url(https://pay2india.com/assets/images/pay/p3.png);
+    background-size:contain;
+    background-repeat: no-repeat;
+  }
   
   .register-photo .form-container {
     display: table;
     max-width: 900px;
     width: 90%;
-    margin: 0 auto;
-    box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+    margin: -120px auto;
   }
   
   .register-photo form {
@@ -220,7 +248,7 @@
   }
 
   .img1{
-   margin-top: 80px;
+   margin-top: 180px;
    height: 25px;
    width: auto;
    margin-bottom: 40px;
@@ -237,7 +265,7 @@
     margin-bottom: 20px;
    }
    .loginImg{
-    height: 550px;
+    height: 730px;
     width: 550px;
     background-color: #4CA6FF;
     text-align: center;
@@ -245,8 +273,8 @@
    }
 
    .cards {
-    margin-top: 50px;
-    margin-left: 170px;
+    margin-top: -80px;
+    margin-left: 320px;
     max-width: 1000px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
@@ -271,4 +299,8 @@
 
 .img_a{
   text-decoration: none;
+}
+
+.checked {
+  color: #4CA6FF;
 }

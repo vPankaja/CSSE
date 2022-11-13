@@ -2,7 +2,7 @@ import React from 'react'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Link } from "react-router-dom";
-import "../../res/css/PlanTimeTable.css"
+import "../../res/css/customer.css"
 
 AOS.init({
       duration: '2000'
@@ -13,14 +13,21 @@ const ManagerHome = () => {
         <div class="landing-page">
         <div class="container">
         <div class="header-area">
-      <div class="logo"><b>BookMyTickets</b></div>
+        <img src={require("../../res/images/logocar.png")} />{" "}
+          <div
+            style={{
+              marginTop: "20px",
+              width: "300px",
+              color: "#3399FF",
+              fontSize: "19px",
+            }}
+          ><b>BookMyTickets</b></div>
       <ul class="links">
-        <li><a href='#'>Home</a></li>
-        <li><a href='#'>About</a></li>
-        <li><a href='#'>Services</a></li>
-        <li><Link to="#"><div class="button">Logout </div></Link></li>
+        <li><a href='/dashboard'>Home</a></li>
+        <li><a href='/managerhome'>Services</a></li>
+        <li><Link to="/"><div class="button">LogOut </div></Link></li>
       </ul>
-      
+      </div>
     </div>
     <div style={{fontSize:"22px",marginBottom:"-50px",textAlign:"center",marginTop:"40px"}}>
       <strong style={{color:"darkblue"}}>Choose your option to go</strong><br></br>
@@ -28,13 +35,14 @@ const ManagerHome = () => {
         would it be to "somewhere" or "someone"</span></div>
         <div className="register-photo">
         
+        <div className="container2">
         <div class="cards">
         <div className="card" style={{borderRadius:"30px",height:"280px",width:"200px",alignItems:"center"}}>
             <div className='imgCont'>
                 <img  src={require("../../res/images/ManagerHome/hom1.png")}/>
             </div>
             <div >
-                <a href='#' style={{textDecoration:"none",color:"darkblue"}}><strong>Vehicle Management</strong></a>
+                <a href='/vehiclelist' style={{textDecoration:"none",color:"darkblue"}}><strong>Vehicle Management</strong></a>
             </div>
             <span style={{fontSize:"14px",color:"#B2BEB5"}}>Manage your vehicle</span>
             <span style={{fontSize:"14px",color:"#B2BEB5"}}>details</span>
@@ -45,7 +53,7 @@ const ManagerHome = () => {
                 <img  src={require("../../res/images/ManagerHome/hom2.png")}/>
             </div>
             <div >
-                <a href='#' style={{textDecoration:"none",color:"darkblue"}}><strong>Routes Management</strong></a>
+                <a href='/routelist' style={{textDecoration:"none",color:"darkblue"}}><strong>Routes Management</strong></a>
             </div>
             <span style={{fontSize:"14px",color:"#B2BEB5"}}>Manage the vehicle</span>
             <span style={{fontSize:"14px",color:"#B2BEB5"}}>Routes</span>
@@ -56,7 +64,7 @@ const ManagerHome = () => {
                 <img  src={require("../../res/images/ManagerHome/hom3.png")}/>
             </div>
             <div >
-                <a href='#' style={{textDecoration:"none",color:"darkblue"}}><strong>Plan Timetable</strong></a>
+                <a href='/plantimetable' style={{textDecoration:"none",color:"darkblue"}}><strong>Plan Timetable</strong></a>
             </div>
             <span style={{fontSize:"14px",color:"#B2BEB5"}}>Plan the timetable</span>
 
@@ -67,7 +75,7 @@ const ManagerHome = () => {
                 <img  src={require("../../res/images/ManagerHome/hom4.png")}/>
             </div>
             <div >
-                <a href='#' style={{textDecoration:"none",color:"darkblue"}}><strong>Monitor Networks</strong></a>
+                <a href='/managetimetables' style={{textDecoration:"none",color:"darkblue"}}><strong>Manage TimeTable</strong></a>
             </div>
             <span style={{fontSize:"14px",color:"#B2BEB5"}}>Monitor overcrowding</span>
             <span style={{fontSize:"14px",color:"#B2BEB5"}}>Networks</span>
@@ -124,6 +132,7 @@ const ManagerHome = () => {
 </div>
     </div>
     </div>
+    
       );
 }
 

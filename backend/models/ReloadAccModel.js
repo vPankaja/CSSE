@@ -1,39 +1,30 @@
 import  mongoose  from 'mongoose';
 
-const UserSchema = mongoose.Schema(
+const ReloadAccSchema = mongoose.Schema(
     {
-        name: {
+        fname: {
             type: String,
             required: true,
         },
-        nic: {
-            type: String,
-            required: true,
-        },
-        dob: {
+        lname: {
             type: String,
             required: true,
         },
         email: {
             type: String,
-            required: true,
+            required: true
         },
-        phoneNumber: {
+        accno: {
             type: String,
             required: true
         },
-        type: {
-            type: String,
-            required: true
-        },
-        password: {
-            type: String,
-            required: true
-        },
-        balance: {
+        amount: {
             type: Number,
-            required: false,
-            default: 0
+            required: true
+        },
+        phoneno: {
+            type: Number,
+            required: true
         }
     },
     {
@@ -41,6 +32,6 @@ const UserSchema = mongoose.Schema(
     }
 )
 
-const Users = mongoose.model("Users", UserSchema);
+const ReloadAcc = mongoose.model("Timetable", ReloadAccSchema);
 
-export default Users;
+export default ReloadAcc;
