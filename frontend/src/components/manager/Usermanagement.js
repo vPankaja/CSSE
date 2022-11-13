@@ -29,7 +29,7 @@ const UserManagement = () => {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        axios.delete(`http://localhost:8070/api/users/${id}`).then(() => {
+        axios.delete(`http://localhost:8070/api/user/${id}`).then(() => {
           if (willDelete) {
             swal({
               title: "The User has been Removed!",
@@ -101,7 +101,6 @@ const UserManagement = () => {
     });
     doc.text("User Details Report", 14, 15).setFontSize(12);
     doc.text(`Report Genarated Date - ${dateStr} `, 14, 23);
-    doc.addImage("JPEG", 170, 8, 22, 22);
     // right down width height
     doc.autoTable(tableColumn, tableRows, {
       styles: { fontSize: 8 },

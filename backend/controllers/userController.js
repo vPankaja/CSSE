@@ -45,7 +45,7 @@ const login = asyncHandler(async (req,res) => {
 const getInfo = asyncHandler(async (req,res) => {
     const userId = req.params.id
 
-    User.findById(userId).then((resp) => {
+    Users.findById(userId).then((resp) => {
         res.json(resp)
         res.status(201)
     }).catch((err) => {
