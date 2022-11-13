@@ -12,9 +12,11 @@ AOS.init({
 
 const Register = () => {
     const [name, setName] = useState("");
+    const [nic, setNIC] = useState("");
+    const [dob, setDOB] = useState("");
     const [email, setEmail] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
-    const [type, settype] = useState("passenger");
+    const [type, settype] = useState("manager");
     const [password, setPassword] = useState("");
 
     function sendData(e) {
@@ -22,6 +24,8 @@ const Register = () => {
     
         const newUser = {
           name,
+          nic,
+          dob,
           email,
           phoneNumber,
           type,
@@ -39,7 +43,7 @@ const Register = () => {
                 icon: "success",
                 type: "success",
               }).then(function () {
-                window.location.href = "/customerhome";
+                window.location.href = "/managerhome";
               });
             } else {
               swal("User Registeration Failed!");
@@ -61,10 +65,7 @@ const Register = () => {
             }}
           ><b>BookMyTickets</b></div>
       <ul class="links">
-        <li><a href='/dashboard'>Home</a></li>
-        <li><a href='#'>About</a></li>
-        <li><a href='/customerhome'>Services</a></li>
-        <li><Link to="/login"><div class="button">Login </div></Link></li>
+        <li><Link to="/"><div class="button">Login </div></Link></li>
       </ul>
       
     </div></div>
@@ -83,6 +84,20 @@ const Register = () => {
                     <label>Name</label><br></br>
                     <input className='input2' type="text" name="name" placeholder="Name"onChange={(e) => {
                     setName(e.target.value);
+                  }}
+                  required
+                /></div>
+                                <div style={{marginBottom:"20px"}}>
+                    <label>NIC</label><br></br>
+                    <input className='input2' type="text" name="nic" placeholder="NIC"onChange={(e) => {
+                    setNIC(e.target.value);
+                  }}
+                  required
+                /></div>
+                                <div style={{marginBottom:"20px"}}>
+                    <label>Date of Birth</label><br></br>
+                    <input className='input2' type="text" name="dob" placeholder="Date of Birth"onChange={(e) => {
+                    setDOB(e.target.value);
                   }}
                   required
                 /></div>
@@ -109,7 +124,7 @@ const Register = () => {
                 /></div>
 
                 <div ><button class="btn1" style={{width:"300px"}} type="submit" >Register</button></div>
-                <div style={{marginLeft:"50px",fontSize:"14px"}}>Already have an account? <a href="url">Sign In</a></div>
+                <div style={{marginLeft:"50px",fontSize:"14px"}}>Already have an account? <a href="/">Sign In</a></div>
              </form>
         </div>
         

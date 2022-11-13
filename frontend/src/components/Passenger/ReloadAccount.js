@@ -82,11 +82,11 @@ const showErrorPopup = function(message) {
               <a href="#">About</a>
             </li>
             <li>
-              <a href="/customerhome">Services</a>
+              <a href="/passengerhome">Services</a>
             </li>
             <li>
-              <Link to="/dashboard">
-                <div class="button">Logout </div>
+              <Link to="/login">
+                <div class="button">LogOut </div>
               </Link>
             </li>
           </ul>

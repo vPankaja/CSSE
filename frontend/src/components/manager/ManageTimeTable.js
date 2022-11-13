@@ -77,10 +77,9 @@ const ManageTimeTables = () => {
             }}
           ><b>BookMyTickets</b></div>
       <ul class="links">
-        <li><a href='/managerhome'>Home</a></li>
-        <li><a href='#'>About</a></li>
-        <li><a href='#'>Services</a></li>
-        <li><Link to="#"><div class="button">Register </div></Link></li>
+      <li><a href='/dashboard'>Home</a></li>
+        <li><a href='/managerhome'>Services</a></li>
+        <li><Link to="/"><div class="button">LogOut</div></Link></li>
       </ul>
       
     </div></div>
@@ -89,9 +88,9 @@ const ManageTimeTables = () => {
     </div>
     <div className="container2">
         <div class="register-photo" >
-        <div><button className="btn btn-primary" style={{ width: "200px","border-radius": "15px",border: "none",marginLeft:"360px" }}>
+        <div><Link to="/plantimetable"><button className="btn btn-primary" style={{ width: "200px","border-radius": "15px",border: "none",marginLeft:"360px" }}>
                             Plan Timetable
-                          </button></div>
+                          </button></Link></div>
         <center>
         <table class="styled-table">
     <thead>

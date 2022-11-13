@@ -71,15 +71,14 @@ function updateRoute(e){
             }}
           ><b>BookMyTickets</b></div>
       <ul class="links">
-        <li><a href='/managerhome'>Home</a></li>
-        <li><a href='#'>About</a></li>
-        <li><a href='#'>Services</a></li>
-        <li><Link to="/dashboard"><div class="button">Logout</div></Link></li>
+      <li><a href='/dashboard'>Home</a></li>
+        <li><a href='/managerhome'>Services</a></li>
+        <li><Link to="/"><div class="button">LogOut</div></Link></li>
       </ul>
       </div>
     </div>
     <div style={{fontSize:"22px",marginBottom:"-50px",textAlign:"center",marginTop:"40px"}}>
-      <strong style={{color:"darkblue"}}>Add Vehicle</strong><br></br>
+      <strong style={{color:"darkblue"}}>Route Details</strong><br></br>
         <span style={{fontSize:"10px"}}>Reload your account without any delay to continue your journey</span></div>
 
         <div className="container2">
@@ -88,7 +87,7 @@ function updateRoute(e){
             <div class="image-holder3"></div>
             <div className="plan1" >
                 <br></br>
-                <p style={{fontSize:"22px",marginBottom:"40px"}}><strong style={{color:"darkblue"}}>Fill  Details</strong><br></br>
+                <p style={{fontSize:"22px",marginBottom:"40px"}}><strong style={{color:"darkblue"}}>Edit Route Details</strong><br></br>
                 <span style={{fontSize:"11px"}}>Fill vehicle details and the cost</span></p>
                 <div style={{marginBottom:"20px"}}><input className='input2' type="text" name="vehiNo" placeholder="Route Id"
                 defaultValue={routes.routeId}

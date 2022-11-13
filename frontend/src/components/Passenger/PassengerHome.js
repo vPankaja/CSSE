@@ -8,7 +8,7 @@ AOS.init({
   duration: "2000",
 });
 
-const CustomerHome = () => {
+const PassengerHome = () => {
   return (
     <div class="landing-page">
       <div class="container">
@@ -32,13 +32,13 @@ const CustomerHome = () => {
               <a href="#">About</a>
             </li>
             <li>
-              <a style={{ color: "#2B65EC" }} href="/customerhome">
+              <a style={{ color: "#2B65EC" }} href="/passengerhome">
                 Services
               </a>
             </li>
             <li>
-              <Link to="/dashboard">
-                <div class="button">Logout </div>
+              <Link to="/login">
+                <div class="button">LogOut </div>
               </Link>
             </li>
           </ul>
@@ -172,4 +172,4 @@ const CustomerHome = () => {
   );
 };
 
-export default CustomerHome;
+export default PassengerHome;
