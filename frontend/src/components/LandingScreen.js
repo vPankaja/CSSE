@@ -35,7 +35,7 @@ const LandingScreen = () => {
         </div></div>
         <div className="container2">
         <div class="info">
-          <h1>Recharge your Account Faster</h1>
+          <h1>Manage Your Work</h1>
           <p>
             "Travel changes you. As you move through this life and this world,
             you change things slightly, you leave marks behind, however small.
@@ -43,7 +43,7 @@ const LandingScreen = () => {
           </p>
           <Link to="/reloadaccount">
             <button>
-              Make Payment
+              Continue 
             </button>
           </Link>
         </div>

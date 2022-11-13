@@ -106,6 +106,7 @@ const postVehicle = asyncHandler(async (req, res) => {
       })
       .catch((err) => {
         res.status(400);
+        res.json({})
       });
   } catch {
     res.status(400);
