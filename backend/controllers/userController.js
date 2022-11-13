@@ -60,6 +60,19 @@ const getAllUsers = asyncHandler(async (req, res) => {
     res.json(users);
   });
 
+//Delete user
+const deleteUser = asyncHandler(async (req, res) => {
+    const users = await Users.findById(req.params.id);
+  
+    if (users) {
+      await users.remove();
+      res.json({ message: "User removed" });
+    } else {
+      res.status(404);
+      throw new Error("User not found");
+    }
+  });
+
 // Reload acc
 const reloadAcc = asyncHandler(async (req,res) => {
     const {userId, amount} = req.body
@@ -78,4 +91,4 @@ const reloadAcc = asyncHandler(async (req,res) => {
     })
 })
 
-export { registerUser, login, getInfo,getAllUsers, reloadAcc }
+export { registerUser, login, getInfo,getAllUsers,deleteUser, reloadAcc }

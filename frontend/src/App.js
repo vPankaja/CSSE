@@ -19,7 +19,7 @@ import Payment from "./components/passenger/Payment";
 import CheckAccBalance from "./components/passenger/CheckAccBalance";
 import CheckTimetables from "./components/passenger/CheckTimetable";
 import Register from "./components/Register";
-import UserManagement from "./components/manager/Employeemanagement";
+import UserManagement from "./components/manager/Usermanagement";
 
 
 function App() {
