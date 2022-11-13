@@ -20,7 +20,7 @@ export default function EndJourney() {
         icon: "success",
         buttons: true
     }).then(() => {
-      localStorage.setItem('çheckedIn', false)
+      localStorage.setItem('checkedIn', false)
         window.location.href = "/home"
     })
     })

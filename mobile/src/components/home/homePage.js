@@ -13,18 +13,20 @@ export default function HomePage() {
   const [checked, setChecked] = useState("");
 
   const getChecked = function () {
-    if (localStorage.getItem("checkedIn") == true) {
+    if (localStorage.checkedIn) {
       console.log('gg')
       setChecked("CHECKOUT");
     } else {
+      console.log(localStorage.checkedIn)
       setChecked("CHECKIN");
     }
   };
 
   const check = function () {
-    if (localStorage.getItem("çheckedIn") == true) {
+    if (localStorage.checkedIn) {
       window.location.href = "/endJourney"
     } else {
+      console.log('start')
       window.location.href = "/startJourney"
     }
   }
@@ -103,14 +105,14 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Check balance */}
+          {/* Check balance
           <div className="col-6 col-sm-4 homebox">
             <img src={box4} style={{ width: "100%" }} alt="" />
             <div className="p-1 boxTitle">View Travel History</div>
             <div style={{ textAlign: "center" }} className="py-2">
               <div className="btn boxBtn">Click</div>
             </div>
-          </div>
+          </div> */}
         </div>
         <div className="row" style={{ position: "fixed" }}>
           <div className="col-1"></div>
