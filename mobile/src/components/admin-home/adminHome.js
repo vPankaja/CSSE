@@ -26,7 +26,7 @@ export default function AdminHome() {
           style={{ display: "flex", width: "100%" }}
         ></div>
       </div>
-      <div style={{ position: "absolute", "margin-top": "200px" }}>
+      <div style={{ position: "absolute", marginTop: "200px" }}>
         <div className="mt-3 optionTextAdmin">Choose your option to go</div>
         <div className="row row-col-2 row-col-sm-3 m-0 pt-3 pb-5">
           {/* Check balance */}
@@ -43,9 +43,11 @@ export default function AdminHome() {
           {/* Check balance */}
           <div className="col-6 col-sm-4 homeboxAdmin">
             <img src={box2} style={{ width: "100%" }} alt="" />
-            <div className="p-1 boxTitleAdmin">Routes Management</div>
+            <div className="p-1 boxTitleAdmin">Timetable Management</div>
             <div style={{ textAlign: "center" }} className="py-2">
-              <div className="btn boxBtnAdmin">Click</div>
+              <Link to="/gettimetableList">
+                <div className="btn boxBtnAdmin">Click</div>
+              </Link>
             </div>
           </div>
 
@@ -63,9 +65,11 @@ export default function AdminHome() {
           {/* Check balance */}
           <div className="col-6 col-sm-4 homeboxAdmin">
             <img src={box4} style={{ width: "100%" }} alt="" />
-            <div className="p-1 boxTitleAdmin">Monitor Networks</div>
+            <div className="p-1 boxTitleAdmin">Routes Management</div>
             <div style={{ textAlign: "center" }} className="py-2">
+              <Link to="/routesList">
               <div className="btn boxBtnAdmin">Click</div>
+              </Link>
             </div>
           </div>
 

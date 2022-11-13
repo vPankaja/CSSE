@@ -2,7 +2,7 @@
   background-color: #003971;
   min-height: 200px;
   height: fit-content;
-  position: fixed;
+  position: absolute;
 }
 
 .titleAdmin {

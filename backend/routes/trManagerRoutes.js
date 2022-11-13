@@ -8,7 +8,10 @@ import {
     postVehicle,
     getRouteById,
     getAllTimetables,
-    deleteVehicle
+    deleteVehicle,
+    deleteTimetable,
+    createRoute,
+    getAllRoutes
 } from "../controllers/transportMngerController.js"
 
 router.post("/createTimetable", createTimetable);
@@ -18,5 +21,8 @@ router.get("/getVehicleById/:id", getVehicleByID);
 router.get("/getAllVehicles", getAllVehicles);
 router.get("/getRouteById/:id", getRouteById);
 router.post("/deleteVehicle/:id", deleteVehicle);
+router.delete("/deleteTimetable/:id", deleteTimetable);
+router.post("/createRoute", createRoute);
+router.get("/getAllRoutes", getAllRoutes);
 
 export default router

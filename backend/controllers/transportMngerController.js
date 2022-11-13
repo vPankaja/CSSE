@@ -141,6 +141,45 @@ const deleteVehicle = asyncHandler(async (req, res) => {
   });
 });
 
+const deleteTimetable = asyncHandler(async (req,res) => {
+    const id = req.params.id
+
+    TimeTable.findByIdAndDelete(id).then((resp) => {
+        res.json(resp)
+        res.status(201);
+    }).catch((err) => {
+        console.log(err) 
+        res.status(400)
+    })
+})
+
+
+const createRoute = asyncHandler(async (req,res) => {
+  const { routeId, route, trafficType } = req.body;
+
+  const newRoute = new Routes({
+    routeId, route, trafficType
+  })
+
+  newRoute.save().then((resp) => {
+    res.json(resp)
+    res.status(201)
+  }).catch(err => {
+    console.log(err)
+    res.status(400)
+  })
+})
+
+const getAllRoutes = asyncHandler(async (req,res) => {
+  Routes.find({}).then(resp => {
+    res.json(resp)
+    res.status(201)
+  }).catch((err) => {
+    console.log(err)
+    res.status(400)
+  })
+})
+
 export {
   createTimetable,
   getVehicleByID,
@@ -149,4 +188,7 @@ export {
   getRouteById,
   getAllTimetables,
   deleteVehicle,
+  deleteTimetable,
+  createRoute,
+  getAllRoutes
 };
