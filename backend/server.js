@@ -8,6 +8,7 @@ import cors from 'cors'
 import UserRoutes from './routes/userRoutes.js'
 import trMngerRoutes from './routes/trManagerRoutes.js'
 import passengerRoutes from './routes/passengerRoutes.js'
+import driverRoutes from './routes/driverRoutes.js'
 import managerRoutes from './routes/managerRoutes.js'
 
 dotenv.config()
@@ -24,6 +25,7 @@ app.use(express.json())
 app.use("/api/user", UserRoutes)
 app.use('/api/trMnger', trMngerRoutes)
 app.use('/api/passenger', passengerRoutes)
+app.use('/api/driver', driverRoutes)
 app.use('/api/manager',managerRoutes)
 
 

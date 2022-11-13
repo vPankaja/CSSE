@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import AOS from "aos";
+import axios from "axios";
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
 import "../../res/css/customer.css";
@@ -9,6 +11,32 @@ AOS.init({
 });
 
 const CheckAccBalance = () => {
+  const { id } = useParams();
+  const [name, setName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [balance, setBalance] = useState("");
+
+  const [accbalance, setAccbalance] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8070/api/user/${id}`)
+      .then((res) => {
+        var user = res.data;
+
+        setAccbalance(user);
+
+        setName(user.name);
+        setPhoneNumber(user.phoneNumber);
+        setBalance(user.balance);
+
+      })
+      .catch((e) => {
+        console.log(e);
+        console.log(id);
+      });
+  }, []);
+
   return (
     <div class="landing-page">
       <div class="container">
@@ -32,11 +60,11 @@ const CheckAccBalance = () => {
               <a href="#">About</a>
             </li>
             <li>
-              <a href="/customerhome">Services</a>
+              <a href="/passengerhome">Services</a>
             </li>
             <li>
-              <Link to="/dashboard">
-                <div class="button">Logout </div>
+              <Link to="/login">
+                <div class="button">LogOut </div>
               </Link>
             </li>
           </ul>
@@ -62,12 +90,6 @@ const CheckAccBalance = () => {
           <div class="form-container">
             <div class="image-holder2"></div>
             <form>
-              <p style={{ fontSize: "22px", marginBottom: "40px" }}>
-                <strong style={{ color: "darkblue" }}>
-                  Good Evening Imesha!
-                </strong>
-                <br></br>
-              </p>
               <div class="row">
                 <div>
                   <div class="card-body">
@@ -81,13 +103,13 @@ const CheckAccBalance = () => {
                           }}
                         >
                           <strong style={{ color: "black" }}>
-                            Last Added Date
+                            Name
                           </strong>
                         </p>
                       </div>
                       <div class="col-sm-6">
                         <p style={{ fontSize: "16px", marginBottom: "20px" }}>
-                          <strong style={{ color: "grey" }}>01/11/2022</strong>
+                          <strong style={{ color: "grey" }}>{accbalance.name}</strong>
                         </p>
                       </div>
                     </div>
@@ -97,13 +119,13 @@ const CheckAccBalance = () => {
                       <div class="col-sm-6">
                         <p style={{ fontSize: "18px", marginBottom: "20px" }}>
                           <strong style={{ color: "black" }}>
-                            Last Added Amount
+                            Phone No
                           </strong>
                         </p>
                       </div>
                       <div class="col-sm-6">
                         <p style={{ fontSize: "16px", marginBottom: "20px" }}>
-                          <strong style={{ color: "grey" }}>1500 Credit</strong>
+                          <strong style={{ color: "grey" }}>{accbalance.phoneNumber}</strong>
                         </p>
                       </div>
                     </div>
@@ -119,7 +141,7 @@ const CheckAccBalance = () => {
                       </div>
                       <div class="col-sm-6">
                         <p style={{ fontSize: "16px", marginBottom: "20px" }}>
-                          <strong style={{ color: "grey" }}>900 Credit</strong>
+                          <strong style={{ color: "grey" }}>{accbalance.balance}</strong>
                         </p>
                       </div>
                     </div>

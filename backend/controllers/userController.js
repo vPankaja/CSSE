@@ -6,10 +6,10 @@ import Users from "../models/UserModel.js";
 
 // Register user
 const registerUser = asyncHandler(async (req,res) => {
-    const {name, email, phoneNumber, type, password} = req.body
+    const {name,nic,dob, email, phoneNumber, type, password} = req.body
 
     const User = await Users({
-        name, email, phoneNumber, type, password
+        name,nic, dob, email, phoneNumber, type, password
     })
 
     try {
@@ -45,7 +45,7 @@ const login = asyncHandler(async (req,res) => {
 const getInfo = asyncHandler(async (req,res) => {
     const userId = req.params.id
 
-    Users.findById(userId).then((resp) => {
+    User.findById(userId).then((resp) => {
         res.json(resp)
         res.status(201)
     }).catch((err) => {
@@ -53,6 +53,12 @@ const getInfo = asyncHandler(async (req,res) => {
         res.status(400)
     })
 })
+
+// Get All users
+const getAllUsers = asyncHandler(async (req, res) => {
+    const users = await Users.find({});
+    res.json(users);
+  });
 
 // Reload acc
 const reloadAcc = asyncHandler(async (req,res) => {
@@ -72,4 +78,4 @@ const reloadAcc = asyncHandler(async (req,res) => {
     })
 })
 
-export { registerUser, login, getInfo, reloadAcc }
+export { registerUser, login, getInfo,getAllUsers, reloadAcc }

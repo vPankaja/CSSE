@@ -24,14 +24,11 @@ const LandingScreen = () => {
               </a>
             </li>
             <li>
-              <a href="#">About</a>
+              <a href="/managerhome">Services</a>
             </li>
             <li>
-              <a href="/customerhome">Services</a>
-            </li>
-            <li>
-              <Link to="/login">
-                <div class="button">Login </div>
+              <Link to="/">
+                <div class="button">LogOut </div>
               </Link>
             </li>
           </ul>

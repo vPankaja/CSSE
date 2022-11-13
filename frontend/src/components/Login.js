@@ -51,7 +51,7 @@ const Login = () => {
           icon: "success",
           type: "success",
         }).then(() => {
-          window.location.href = "/customerhome";
+          window.location.href = "/dashboard";
         })
       }
     })
@@ -71,9 +71,6 @@ const Login = () => {
             }}
           ><b>BookMyTickets</b></div>
       <ul class="links">
-        <li><a href='/dashboard'>Home</a></li>
-        <li><a href='#'>About</a></li>
-        <li><a href='/customerhome'>Services</a></li>
         <li><Link to="/register"><div class="button">Register </div></Link></li>
       </ul>
       

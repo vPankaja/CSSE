@@ -150,11 +150,9 @@ const createTimetable = async function () {
             }}
           ><b>BookMyTickets</b></div>
       <ul class="links">
-        <li><a href='/managerhome'>Home</a></li>
         <li><a href='/dashboard'>Home</a></li>
-        <li><a href='#'>About</a></li>
         <li><a href='/managerhome'>Services</a></li>
-        <li><Link to="/dashboard"><div class="button">Logout</div></Link></li>
+        <li><Link to="/"><div class="button">LogOut</div></Link></li>
       </ul>
       </div>
     </div>
