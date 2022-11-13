@@ -40,3 +40,5 @@ if (process.env.NODE_ENV === 'development') {
       `server running in ${process.env.NODE_ENV} port ${PORT}`
     )
   )
+
+  export default app;

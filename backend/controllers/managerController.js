@@ -6,6 +6,7 @@ import TimeTable from "../models/Timetable.js";
 import Vehicles from "../models/Vehicle.js";
 import Routes from "../models/RoutesModel.js";
 
+//Add Routes
 const postRoutes = asyncHandler(async (req,res) => {
     const {routeId,route,trafficType} = req.body
     
@@ -19,6 +20,7 @@ const postRoutes = asyncHandler(async (req,res) => {
             res.status(201)
         }).catch((err) => {
             res.status(400)
+            res.json({})
         })
     }
     catch {
@@ -26,6 +28,7 @@ const postRoutes = asyncHandler(async (req,res) => {
     }
 })
 
+//get All Routes
 const getAllRoutes = asyncHandler(async (req,res) => {
     try {
         Routes.find({}).then((resp) => {
@@ -40,6 +43,7 @@ const getAllRoutes = asyncHandler(async (req,res) => {
     }
 })
 
+//delete Vehicle
 const deleteVehicle = async (req, res) => {
     const Oid = req.params.id;
     await Vehicles.findByIdAndDelete(Oid)
@@ -51,6 +55,7 @@ const deleteVehicle = async (req, res) => {
       });
   };
 
+  //delete Route
   const deleteRoute = async (req, res) => {
     const Oid = req.params.id;
     await Routes.findByIdAndDelete(Oid)
@@ -62,6 +67,7 @@ const deleteVehicle = async (req, res) => {
       });
   };
 
+  //delete Timetable
   const deleteTimetable = async (req, res) => {
     const Oid = req.params.id;
     await TimeTable.findByIdAndDelete(Oid)
@@ -73,6 +79,7 @@ const deleteVehicle = async (req, res) => {
       });
   };
 
+  //Update Vehicle
   const updateVehicle = async (req, res) => {
     const Oid = req.params.id;
     const { vehicleNo, driverName, vehicleType, cost} = req.body;
@@ -85,6 +92,8 @@ const deleteVehicle = async (req, res) => {
         console.log(err);
       });
   };
+
+  //get One Vehicle
   const getOneVehicle = async (req, res) => {
     const Oid = req.params.id;
     await Vehicles.findById(Oid)
@@ -96,6 +105,7 @@ const deleteVehicle = async (req, res) => {
       });
   };
 
+  //Update Route
   const updateRoute = async (req, res) => {
     const Oid = req.params.id;
     const { routeId,route,trafficType} = req.body;
@@ -108,6 +118,8 @@ const deleteVehicle = async (req, res) => {
         console.log(err);
       });
   };
+
+  //get One Route
   const getOneRoute = async (req, res) => {
     const Oid = req.params.id;
     await Routes.findById(Oid)
